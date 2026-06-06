@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopEasy - Beauty & Cosmetics</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      Customer Service: (+92) 321-000-0000 &nbsp;|&nbsp; Free shipping on orders
+      over $50!
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="nav-brand">
+        <i class="fas fa-spa"></i> Shop<span>Easy</span>
+      </div>
+      <div class="nav-search">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search products..." />
+      </div>
+      <div class="nav-icons">
+        <a href="wishlist.html" title="Wishlist" style="position: relative">
+          <i class="fas fa-heart"></i>
+          <span class="cart-count" id="wishCount">0</span>
+        </a>
+        <a href="login.html" title="Login" id="navLoginBtn">
+          <i class="fas fa-user"></i>
+        </a>
+        <a href="cart.html" title="Cart" style="position: relative">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- CATEGORY NAV -->
+    <div class="cat-nav">
+      <a href="#" class="active" onclick="filterByCategory('all')"
+        >All Products</a
+      >
+      <a href="#" onclick="filterByCategory('electronics')">Electronics</a>
+      <a href="#" onclick="filterByCategory('clothing')">Clothing</a>
+      <a href="#" onclick="filterByCategory('books')">Books</a>
+      <a href="#" onclick="filterByCategory('home')">Home & Kitchen</a>
+      <a href="#" onclick="filterByCategory('beauty')">Beauty</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="sale-badge">Sale Up To 40% Off</span>
+        <h1>Discover Amazing Products</h1>
+        <p>Shop the best deals on electronics, clothing, beauty & more</p>
+        <a href="#products" class="btn-hero">Shop Now</a>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=500"
+          alt="Hero"
+        />
+      </div>
+    </section>
+
+    <!-- CATEGORY ICONS ROW -->
+    <section class="categories-row">
+      <div class="cat-icons-grid">
+        <div class="cat-icon-item" onclick="filterByCategory('electronics')">
+          <div class="cat-icon-circle">
+            <img
+              src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100"
+              alt="Electronics"
+            />
+          </div>
+          <span>Electronics</span>
+        </div>
+        <div class="cat-icon-item" onclick="filterByCategory('clothing')">
+          <div class="cat-icon-circle">
+            <img
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=100"
+              alt="Clothing"
+            />
+          </div>
+          <span>Clothing</span>
+        </div>
+        <div class="cat-icon-item" onclick="filterByCategory('books')">
+          <div class="cat-icon-circle">
+            <img
+              src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=100"
+              alt="Books"
+            />
+          </div>
+          <span>Books</span>
+        </div>
+        <div class="cat-icon-item" onclick="filterByCategory('home')">
+          <div class="cat-icon-circle">
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=100"
+              alt="Home"
+            />
+          </div>
+          <span>Home & Kitchen</span>
+        </div>
+        <div class="cat-icon-item" onclick="filterByCategory('beauty')">
+          <div class="cat-icon-circle">
+            <img
+              src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=100"
+              alt="Beauty"
+            />
+          </div>
+          <span>Beauty</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMO BANNERS -->
+    <section class="promo-section">
+      <div class="promo-card pink">
+        <div class="promo-content">
+          <p class="discount">25% Discount</p>
+          <h3>Best Deals on Electronics</h3>
+          <a
+            href="#"
+            class="btn-promo"
+            onclick="filterByCategory('electronics')"
+            >Shop Now</a
+          >
+        </div>
+        <img
+          class="promo-img"
+          src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200"
+          alt="Promo"
+        />
+      </div>
+      <div class="promo-card gold">
+        <div class="promo-content">
+          <p class="discount">30% Discount</p>
+          <h3>Trending Clothing Styles</h3>
+          <a href="#" class="btn-promo" onclick="filterByCategory('clothing')"
+            >Shop Now</a
+          >
+        </div>
+        <img
+          class="promo-img"
+          src="https://images.unsplash.com/photo-1601333144130-8cbb312386b6?w=200"
+          alt="Promo"
+        />
+      </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products-section" id="products">
+      <div class="section-header">
+        <h2>Trending Products</h2>
+        <div class="underline"></div>
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this, 'all')">
+            New Arrivals
+          </button>
+          <button class="tab-btn" onclick="switchTab(this, 'bestseller')">
+            Bestseller
+          </button>
+          <button class="tab-btn" onclick="switchTab(this, 'special')">
+            Special
+          </button>
+        </div>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+      <div class="view-more-wrap">
+        <button class="btn-view-more">View More Products</button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>
+        © 2024 ShopEasy. All rights reserved. | Built with ❤️ during CodeAlpha
+        Internship
+      </p>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/auth-guard.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script>
+      function filterByCategory(cat) {
+        const filtered =
+          cat === 'all'
+            ? sampleProducts
+            : sampleProducts.filter((p) => p.category === cat);
+        displayProducts(filtered);
+        document
+          .querySelectorAll('.cat-nav a')
+          .forEach((a) => a.classList.remove('active'));
+      }
+
+      function switchTab(btn, type) {
+        document
+          .querySelectorAll('.tab-btn')
+          .forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        displayProducts(sampleProducts);
+      }
+
+      // Hook search input
+      document
+        .getElementById('searchInput')
+        .addEventListener('input', function () {
+          const val = this.value.toLowerCase();
+          const filtered = sampleProducts.filter((p) =>
+            p.name.toLowerCase().includes(val)
+          );
+          displayProducts(filtered);
+        });
+      // ===== SHOW USER NAME OR LOGIN BUTTON =====
+      const loggedUser = localStorage.getItem('user');
+      if (loggedUser) {
+        const user = JSON.parse(loggedUser);
+        const navBtn = document.getElementById('navLoginBtn');
+        if (navBtn) {
+          navBtn.innerHTML = `<i class="fas fa-user-check"></i> ${user.name.split(' ')[0]}`;
+          navBtn.style.color = '#8b1a2f';
+          navBtn.style.fontWeight = '600';
+          navBtn.style.fontSize = '13px';
+          navBtn.href = '#';
+          navBtn.title = 'Logged in as ' + user.name;
+        }
+      }
+    </script>
+  </body>
+</html>
